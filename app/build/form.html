@@ -94,37 +94,35 @@
                             У вас интересный проект? Напишите мне
                         </div>
                         <div class="container_info">
-                            <div class="container_project margin_project">
-                                <form action="https://echo.bitlomanka.top" method="post" class="form_of_communication">
-                                    <div class="input_container">
-                                        <div class="form_float_block">
-                                            <label for="user_field_id" class="label">Имя</label>
-                                            <input id="user_field_id" type="text" name="username" placeholder="Как к Вам обращаться" value="" class="type_text">
-                                        </div>
-                                        <div class="form_float_block">
-                                            <label for="mail_id" class="label">Email</label>
-                                            <input id="mail_id" type="text" name="mail" placeholder="Куда мне писать" value="" class="type_text">
-                                        </div>
+                            <form action="https://echo.bitlomanka.top" method="post" class="form_of_communication margin">
+                                <div class="input_container">
+                                    <div class="form_float_block">
+                                        <label for="user_field_id" class="label">Имя</label>
+                                        <input id="user_field_id" type="text" name="username" placeholder="Как к Вам обращаться" value="" class="type_text">
                                     </div>
-                                    <div class="input_container">
-                                        <label for="message" class="label">Сообщение</label>
-                                        <textarea name="message" id="message" class="message">Кратко в чем суть</textarea>
+                                    <div class="form_float_block">
+                                        <label for="mail_id" class="label">Email</label>
+                                        <input id="mail_id" type="text" name="mail" placeholder="Куда мне писать" value="" class="type_text">
                                     </div>
-                                    <div class="input_container">
-                                        <label for="captcha" class="label">Введите код, указанный на картинке</label>
-                                        <div class="form_float_block m_n">
-                                            <div class="captcha_block_img">
-                                                <img src="images/cpt.png" alt="" class="captcha_img">
-                                            </div> 
-                                            <input type="submit" value="Отправить" class="submit button_form">
-                                        </div>
-                                        <div class="form_float_block">
-                                            <input id="captcha" type="text" name="captcha" placeholder="Введите код" value="" class="captcha type_text">
-                                        </div>
-                                        
+                                </div>
+                                <div class="input_container">
+                                    <label for="message" class="label">Сообщение</label>
+                                    <textarea name="message" id="message" class="message" placeholder="Кратко в чем суть"></textarea>
+                                </div>
+                                <div class="input_container">
+                                    <label for="captcha" class="label">Введите код, указанный на картинке</label>
+                                    <div class="form_float_block m_n">
+                                        <div class="captcha_block_img">
+                                            <img src="images/cpt.png" alt="" class="captcha_img">
+                                        </div> 
+                                        <input type="submit" value="Отправить" class="submit button_form">
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="form_float_block">
+                                        <input id="captcha" type="text" name="captcha" placeholder="Введите код" value="" class="captcha type_text">
+                                        <input type="reset" value="Очистить" class="clean button_form">
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </section>
                     

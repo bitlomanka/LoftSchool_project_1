@@ -5,20 +5,8 @@ body{
     width: 100%;
     height: 100%;
     font: 400 14px open sans;
+    word-wrap: break-word;
 }
-/*
-
-body:after{
-    content: '';
-    background: url(../images/bg_body.png) no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-*/
 
 ul{
     padding: 0;
@@ -77,17 +65,15 @@ html,body,
 
 .social{
     float: right;
-    letter-spacing: -0.3em;
 }
 
 .social_item{
     list-style: none;
     display: inline-block;
-    vertical-align: :top;
     background-image: linear-gradient( 90deg, rgb(231,229,228) 0%, rgb(250,249,249) 94%, rgb(255,255,255) 100%);
     border-radius: 50%;
     box-shadow:0px 2px 1px 0.00px rgba(9, 9, 9, 0.31);
-    margin-left: 15px;
+    margin-left: 12px;
     letter-spacing: normal;
 }
 
@@ -377,7 +363,7 @@ html,body,
 .experience{
     list-style: none;
     color:#727070;
-    margin: 0;
+    margin-top: 25px;
 }
 
 .position{
@@ -389,7 +375,7 @@ html,body,
 }
 
 .list_an_experience{
-    padding: 30px 0 30px 17%;
+    padding: 26px 0 27px 17%;
     position: relative;
     min-height: 30px;
     overflow: hidden;
@@ -469,6 +455,7 @@ html,body,
 .container_footer{
     margin: 20px auto;
     width: 40%;
+    min-width: 508px;
     color: #9c9c9c;
     overflow: hidden;
 }
@@ -501,26 +488,28 @@ html,body,
 
 
 .container_project{
-    width: 100%;
-    padding: 2px 1.5%;
+    width: 99%;
+    padding: 1px 0.5%;
     overflow: hidden;
+    letter-spacing: -0.3em;
+    margin-bottom: 225px;
 }
 
 .block_project{
-    width: 28.5%;
+    width: 29.5%;
     background: #fff;
     box-shadow: 0 0 1px 1px #c5c5c5, 0px 2px 1px 0.00px rgba(9, 9, 9, 0.07);
     border-radius: 5px;
     background-image: linear-gradient( 0deg, rgb(237,235,234) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
-    margin-left: 5.6%;
-    float: left;
+    margin:28px 0 0 5.6%;
+    display: inline-block;
+    vertical-align: top;
     min-height: 71.6%;
     overflow: hidden;
+    letter-spacing: normal;
 }
 
-.block_project:first-child{
-    margin: 0;
-}
+
 
 .wrapp_img_name{
     display: block;
@@ -586,7 +575,7 @@ html,body,
 .name_site{
     color: #727070;
     font: 600 13px / 22px open sans;
-    padding: 9px;
+    padding: 4px;
     text-align: center;
     display: block;
 }
@@ -598,15 +587,12 @@ html,body,
 }
 
 .margin_project{
-    margin: 33px 0 0 0;
+    margin-left: 0;
 }
 
-.margin_project:last-child{
-    margin-bottom:168px;
-}
 
 .add_project{
-    padding-top: 102px;
+    padding-top: 66%;
     position: relative;
     cursor: pointer;
 }
@@ -636,20 +622,28 @@ html,body,
 
 
 .form_of_communication{
-    width: 74.5%;
+    width: 71.5%;
     margin: 0 auto;
     overflow: hidden;
+    margin: 35px auto 102px;
+    
 }
 
+
+
 input{
+    padding: 10px 4%;
+    display: block;
     border-radius: 3px;
     border: none; 
     box-shadow: inset 2px 4px 10px 0 rgba(236,232,227,.75),0 0 1px 1px #c5c5c5;
 }
 
-input{
-    padding: 10px 4%;
+.tnput[type="text"]{
+    color: red;
+   background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%); 
 }
+
 
 .input_container{
     overflow: hidden;
@@ -669,7 +663,6 @@ input{
 .type_text, .message{
     margin: 6px 0 15px;
     font: 300 12px open sans;
-    color: #c7c6c6;
     background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
 }
 
@@ -684,8 +677,11 @@ input{
 }
 
 .message{
-    width: 95%;
-    height: 175px;
+    width: 88%;
+    height: 161px;
+    padding: 10px 4%;
+    margin-bottom: 12px;
+    resize: none;
 }
 
 .message, .captcha_block_img{
@@ -695,9 +691,9 @@ input{
 }
 
 .captcha_block_img{
-    height: 72px;
+    height: 73px;
     width: 97%;
-    margin: 5px 0;
+    margin: 7px 0;
     padding: 1%;
 }
 
@@ -714,7 +710,7 @@ input{
 }
 
 .submit{
-    margin: 28px 0 10px;
+    margin: 34px 0 10px;
     background-image: linear-gradient( 0deg, rgb(67,183,150) 0%, rgb(128,232,203) 100%);
     box-shadow: 0px 2px 1px 0.00px rgba(9, 9, 9, 0.16);
 }
@@ -730,11 +726,23 @@ input{
     box-shadow: inset 2px 4px 10px 0 rgba(236,232,227,.75),0 0 1px;
     color: #1e7465;
     width: 65%;
+    margin-left:auto;
+    margin-right: auto;
 }
 
 .captcha{
-    margin: 1px;
+    margin: 30px 0 0 0;
     padding: 5px;
+}
+
+.form_float_block>.clean{
+    margin: 60px auto 10px;
+    color: #727070;
+}
+
+.clean:hover{
+  background-image:linear-gradient( 0deg, rgb(194,192,192) 0%, rgb(227,225,225) 87%, rgb(230,228,228) 90%, rgb(232,231,231) 100%);
+
 }
 
 
