@@ -1,53 +1,38 @@
 var gulp = require("gulp"),
-    concatCss = require('gulp-concat-css'),
+    useref = require('gulp-useref'),
+    gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    browserSync = require('browser-sync'),
     minifyCss = require('gulp-minify-css'),
-    mainBowerFiles = require('main-bower-files');
-
-gulp.task('css-bower', function() {
-    return gulp.src(mainBowerFiles('**/*.css'))        
-        .pipe(gulp.dest('app/source/css/lib'));
-});
-
-gulp.task('css', ['css-bower'], function () {
-  return gulp.src('app/source/css/**/*.css')
-    .pipe(concatCss('bundle.min.css'))
-    .pipe(minifyCss())
-    .pipe(gulp.dest('app/build/css'));
-});
-
+    browserSync = require('browser-sync');
+ 
+// css/js/html
 gulp.task('html', function () {
-  return gulp.src('app/source/*.html')
-    .pipe(gulp.dest('app/build/'));
+    return gulp.src('app/source/*.html')
+        .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', minifyCss()))
+        .pipe(gulp.dest('app/build'));
 });
 
+// картинки
 gulp.task('images', function () {
   return gulp.src('app/source/images/**/*.*')
     .pipe(gulp.dest('app/build/images'));
 });
 
-// font
+// шрифты
 gulp.task('fonts', function () {
   return gulp.src('app/source/fonts/**/*.*')
-    .pipe(gulp.dest('app/build/fonts'));
+    .pipe(gulp.dest('app/build/css'));
 });
 
-
-gulp.task('js-bower', function() {
-    return gulp.src(mainBowerFiles('**/*.js'))        
-        .pipe(gulp.dest('app/source/js/lib'));
+// хаки
+gulp.task('oldbrowsers', function () {
+  return gulp.src('app/source/oldbrowsers/**/*.*')
+    .pipe(gulp.dest('app/build/oldbrowsers'));
 });
-
-gulp.task('js', ['js-bower'], function() {
-    return gulp.src('app/source/js/**/*.js')
-        .pipe(concat('main.js'))
-//        .pipe(uglify())
-        .pipe(gulp.dest('app/build/js'));
-});
-
-// Сервер
+    
+// сервер
 gulp.task('server', function () {  
   browserSync({
     port: 9000,
@@ -57,18 +42,102 @@ gulp.task('server', function () {
   });
 });
 
-// Слежка
+// слежка
 gulp.task('watch', function () {
   gulp.watch([
     'app/source/*.html',
     'app/source/js/**/*.js',
     'app/source/css/**/*.css',
     'app/source/images/**/*.*',
-  ], ['compile', browserSync.reload]);
+  ], ['build', browserSync.reload]);
 });
 
-gulp.task('compile', ['html', 'fonts', 'css', 'images', 'js']);
+// сборка
+gulp.task('build', ['html', 'images', 'fonts', 'oldbrowsers']);
 
-// Задача по-умолчанию
-gulp.task('default', ['compile', 'server', 'watch']);
-
+// таск по умолчанию
+gulp.task('default', ['build', 'server', 'watch']);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+//    
+//    concatCss = require('gulp-concat-css'),
+//    uglify = require('gulp-uglify'),
+//    concat = require('gulp-concat'),
+//    browserSync = require('browser-sync'),
+//    minifyCss = require('gulp-minify-css'),
+//    mainBowerFiles = require('main-bower-files');
+//
+//gulp.task('css-bower', function() {
+//    return gulp.src(mainBowerFiles('**/*.css'))        
+//        .pipe(gulp.dest('app/source/css/lib'));
+//});
+//
+//gulp.task('css', ['css-bower'], function () {
+//  return gulp.src('app/source/css/**/*.css')
+//    .pipe(concatCss('bundle.min.css'))
+//    .pipe(minifyCss())
+//    .pipe(gulp.dest('app/build/css'));
+//});
+//
+//gulp.task('html', function () {
+//  return gulp.src('app/source/*.html')
+//    .pipe(gulp.dest('app/build/'));
+//});
+//
+//gulp.task('images', function () {
+//  return gulp.src('app/source/images/**/*.*')
+//    .pipe(gulp.dest('app/build/images'));
+//});
+//
+//// font
+//gulp.task('fonts', function () {
+//  return gulp.src('app/source/fonts/**/*.*')
+//    .pipe(gulp.dest('app/build/fonts'));
+//});
+//
+//
+//gulp.task('js-bower', function() {
+//    return gulp.src(mainBowerFiles('**/*.js'))        
+//        .pipe(gulp.dest('app/source/js/lib'));
+//});
+//
+//gulp.task('js', ['js-bower'], function() {
+//    return gulp.src('app/source/js/**/*.js')
+//        .pipe(concat('main.js'))
+////        .pipe(uglify())
+//        .pipe(gulp.dest('app/build/js'));
+//});
+//
+//// Сервер
+//gulp.task('server', function () {  
+//  browserSync({
+//    port: 9000,
+//    server: {
+//      baseDir: 'app/build'
+//    }
+//  });
+//});
+//
+//// Слежка
+//gulp.task('watch', function () {
+//  gulp.watch([
+//    'app/source/*.html',
+//    'app/source/js/**/*.js',
+//    'app/source/css/**/*.css',
+//    'app/source/images/**/*.*',
+//  ], ['compile', browserSync.reload]);
+//});
+//
+//gulp.task('compile', ['html', 'fonts', 'css', 'images', 'js']);
+//
+//// Задача по-умолчанию
+//gulp.task('default', ['compile', 'server', 'watch']);
+//

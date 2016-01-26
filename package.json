@@ -6,14 +6,14 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "latest",
-    "grunt-concat-css": "latest",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-concat-css": "latest",
+    "gulp-if": "latest",
     "gulp-minify-css": "latest",
     "gulp-rename": "latest",
     "gulp-uglify": "latest",
-    "main-bower-files": "latest"
+    "gulp-useref": "latest"
   },
   "scripts": {
     "test": "test"
