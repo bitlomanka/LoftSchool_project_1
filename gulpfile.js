@@ -1,16 +1,22 @@
 var gulp = require("gulp"),
     useref = require('gulp-useref'),
     gulpif = require('gulp-if'),
-    uglify = require('gulp-uglify'),
-    minifyCss = require('gulp-minify-css'),
-    browserSync = require('browser-sync');
+    uglify = require('gulp-uglify'),    
+    browserSync = require('browser-sync'),
+    postcss = require('gulp-postcss'),    
+    autoprefixer = require('autoprefixer'),
+    cssnano = require('cssnano');
  
 // css/js/html
 gulp.task('html', function () {
     return gulp.src('app/source/*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', minifyCss()))
+        .pipe(gulpif('*.css', postcss([
+                autoprefixer({ browsers: ['last 2 versions'] }),
+                cssnano
+            ])
+         ))        
         .pipe(gulp.dest('app/build'));
 });
 

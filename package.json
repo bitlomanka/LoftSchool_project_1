@@ -5,12 +5,14 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "latest",
     "browser-sync": "latest",
+    "cssnano": "latewst",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-concat-css": "latest",
-    "gulp-if": "latest",
-    "gulp-minify-css": "latest",
+    "gulp-if": "latest",    
+    "gulp-postcss": "latest",
     "gulp-rename": "latest",
     "gulp-uglify": "latest",
     "gulp-useref": "latest"
