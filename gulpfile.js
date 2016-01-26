@@ -42,8 +42,8 @@ gulp.task('js-bower', function() {
 
 gulp.task('js', ['js-bower'], function() {
     return gulp.src('app/source/js/**/*.js')
-        .pipe(concat('main.min.js'))
-        .pipe(uglify())
+        .pipe(concat('main.js'))
+//        .pipe(uglify())
         .pipe(gulp.dest('app/build/js'));
 });
 

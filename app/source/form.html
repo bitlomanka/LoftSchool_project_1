@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru_RU">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +7,19 @@
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bundle.min.css">
+    <script src="js/libs/modernizr.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     <div class="wrapper">
         <div class="inner_wrapper">
             <header class="header">
                 <div class="container_header">
-                    <a href="index.html" class="logo">
+                    <a href="index.html" class="logo_block">
                         <img src="images/logo.png" alt="LoftSchool" class="logo">
                         <span class="logo_text">
                             Loftschool. От мыслителя к создателю
@@ -59,10 +64,8 @@
                             </li>
                         </ul>
                     </nav>
+                    <h2 class="contact">Контакты</h2>
                     <ul class="list">
-                        <li class="menu_item">
-                            <a href="#" class="contact list_item">Контакты</a>
-                        </li>
                         <li class="menu_item">
                             <a href="mailto:victoria.kr.1990@gmail.com" class="mail list_item contact_item_link">
                                 <span class="contact_icon_1 contact_icons">
@@ -140,6 +143,13 @@
             </div>
         </footer>
     </div>
-    <script src="js/main.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/libs/jquery.placeholder.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $('input, textarea').placeholder();
+        });
+      
+    </script>
 </body>
 </html>
