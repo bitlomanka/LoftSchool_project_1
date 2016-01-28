@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-backgroundsize-cssgradients-opacity-placeholder-rgba-setclasses-shiv-dontmin
+ * Build http://modernizr.com/download?-backgroundsize-boxshadow-cssgradients-opacity-placeholder-rgba-setclasses-shiv-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1242,6 +1242,21 @@ Tests for placeholder attribute in inputs and textareas
 !*/
 
   Modernizr.addTest('backgroundsize', testAllProps('backgroundSize', '100%', true));
+
+/*!
+{
+  "name": "Box Shadow",
+  "property": "boxshadow",
+  "caniuse": "css-boxshadow",
+  "tags": ["css"],
+  "knownBugs": [
+    "WebOS false positives on this test.",
+    "The Kindle Silk browser false positives"
+  ]
+}
+!*/
+
+  Modernizr.addTest('boxshadow', testAllProps('boxShadow', '1px 1px', true));
 
 
   // Run each test
