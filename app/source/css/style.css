@@ -19,6 +19,16 @@ html,body,
     width: 100%;
 }
 
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
 .wrapper{
     display: table;
 }
@@ -41,7 +51,6 @@ html,body,
     width: 100%;
     padding: 11px 0 9px;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .container{
@@ -69,7 +78,6 @@ html,body,
 
 .header_right{
     float: right;
-    overflow: hidden;
     padding: 16px 0;
     position: relative;
 }
@@ -83,7 +91,10 @@ html,body,
     background-size: contain;
     float: right;
     vertical-align: top; 
+    cursor: pointer;
+    position: relative;
 }
+
 
 .social{
     display: inline-block;
@@ -106,6 +117,36 @@ html,body,
     width: 36px;
     height: 36px;
 }
+
+.navigation_mob{
+    display: none;
+    width:200px;
+    position: absolute;
+    right: 0;
+    bottom: -200px;
+    z-index: 3;
+}
+
+.navigation_mob:before{
+    content:'';
+    border-bottom: 11px solid #F2EFEF;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    position: absolute;
+    right: 3px;
+    top:-10px;
+}
+
+.navigation_mob .menu_item_link{
+    font-size: 18px;
+    padding:13px 6%;
+    text-align: center;
+}
+
+.navigation_mob.open {
+    display: block;
+}
+
 
 .facebook,.vkontakte,
 .twitter,.github, 
@@ -766,10 +807,11 @@ input{
 }
 
 .captcha_block_img{
-    height: 73px;
     width: 97%;
     margin: 0 0 32px;
-    padding: 1%;
+    overflow: hidden;
+    height: 76px;
+    padding: 5px;
 }
 
 .m_n{
@@ -781,7 +823,7 @@ input{
     display: block;
     margin: 0 auto;
     width: 100%;
-    height: auto;
+    
 }
 
 .submit{
@@ -808,7 +850,7 @@ input{
 }
 
 .captcha{
-    margin: 30px 0 47px 0;
+    margin: 30px 0 51px 0;
     padding: 5px;
 }
 
@@ -959,7 +1001,11 @@ input{
         display: none;
     }
     
-
+    
+    .navigation_mob .menu_item{
+        float: none;
+        width: 100%;
+    }
     
     .menu_item{
         float:left;
@@ -982,6 +1028,8 @@ input{
         width: 29.8%;
         margin-left: 13.7%
     }
+    
+   
 }
  
 
@@ -1005,6 +1053,8 @@ input{
         font-size: 8px;
         float: right;
     }
+    
+    
     
     .menu_item, .block_basic_information,
     .list_an_experience
@@ -1096,6 +1146,21 @@ input{
         width: 100%;
         
     }
+    
+    .message{
+        width: 100%;
+    }
+    
+    .button_form{
+        width: 100%;
+    }
+    
+    .form_of_communication{
+        width: 80%;
+    }
+    
+    
+    
     
 }
 

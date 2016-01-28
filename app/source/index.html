@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Loftschool project-1</title>    
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
@@ -21,14 +21,14 @@
     <div class="wrapper">
         <div class="inner_wrapper">
             <header class="header">
-                <div class="container_header">
+                <div class="container_header clearfix">
                     <a href="index.html" class="logo_block">
                         <img src="images/logo.png" alt="LoftSchool" class="logo">
                         <span class="logo_text">
                             Loftschool. От мыслителя к создателю
                         </span>
                     </a>
-                    <div class="header_right">
+                    <div class="header_right clearfix">
                         <ul class="social">
                             <li class="social_item">
                                 <a href="https://www.facebook.com/profile.php?id=100009317504364" target="_blank" class="social_item_link facebook">
@@ -52,6 +52,19 @@
                             </li>
                         </ul>
                         <div class="mobile_menu"> 
+                            <nav class="navigation_mob">
+                                <ul class="list">
+                                    <li class="menu_item">
+                                        <a href="index.html" class="list_item menu_item_link active_nav">Обо мне</a>
+                                    </li>
+                                    <li class="menu_item">
+                                        <a href="project.html" class="list_item menu_item_link ">Мои Работы</a>
+                                    </li>
+                                    <li class="menu_item">
+                                        <a href="form.html" class="list_item menu_item_link">Обратная связь</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -64,7 +77,7 @@
                         </div>
                         <div class="container_info">
                             <div class="wrapp_avatar">
-                                    <img src="../images/ava.jpg" alt="avatar" class="ava_img">
+                                    <img src="images/ava.jpg" alt="avatar" class="ava_img">
                                 </div>
                             <ul class="block_basic_information">
                                 <li class="titile_info">
@@ -289,7 +302,8 @@
     </div>
     <!-- build:js js/main.js -->
     <script src="bower/jquery/dist/jquery.min.js"></script> 
-    <script src="bower/jquery-placeholder/jquery.placeholder.js"></script> 
+    <script src="bower/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="js/main.js"></script>
     <!-- endbuild -->
 </body>
 </html>
