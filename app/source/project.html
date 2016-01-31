@@ -247,6 +247,20 @@
                 </div>
             </div>
         </div>
+        <form action="" method="post" class="pop_up">
+            <div class="close"></div>
+            <label for="name_project_form" class="label">Название проекта</label>
+            <input id="name_project_form" type="text" name="name_project_form" placeholder="Введите название" value="" class="type_text">
+            <label for="image_project_form" class="label">Картинка проекта</label>
+            <div class="fileform">
+               <div id="fileformlabel"></div>
+                <div class="selectbutton"></div>
+                <input id="image_project_form" type="file" name="image_project_form" placeholder="Добавьте ссылку" value="" class="upload" onchange="getName(this.value);">
+            </div>
+            <label for="message_project" class="label">URL проекта</label>
+            <textarea name="message_project" id="message_project" class="message mess_proj" placeholder="Пара слов о Вашем проекте"></textarea>
+            <input type="submit" value="Добавить" class="submit button_form">
+        </form>
         <footer class="footer">
             <div class="container_footer">
                 <a href="#" class="entrance">
