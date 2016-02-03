@@ -1176,7 +1176,8 @@ input{
     display: none;
 }
 
-.b-closse{
+
+.b-close{
     width: 14px;
     height: 13px;
     background: url(../images/x.png) no-repeat;
@@ -1185,6 +1186,7 @@ input{
     top: 6px;
     cursor: pointer;
 }
+
 
 .mess_proj{
     width: 100%;
@@ -1288,8 +1290,10 @@ label.error:after{
     right: -7px;
 }
 
-.error_right .error{
+.error_right label.error{
+    right: auto;
     left: 100%;
+    margin-left: 11px;
 }
 
 .error_right label.error:before{

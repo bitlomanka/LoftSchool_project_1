@@ -12,17 +12,17 @@ $(document).ready(function(){
     $('.new_project').on('click', function(){
         $('.pop_up').bPopup({
             speed:500,
-            opasity:.3,
+            opacity:0.3,
             positionStyle: 'fixed',
             transition: 'slideDown'
         })
         return false;
     });
     
-    $('.b-closse').on('click', function(){
-        var bPopup = $('.pop_up').bPopup();
-        bPopup.close();
-        reset_validate();
+    
+    $('.b-close').bind('click', function(){
+        $('.pop_up').find("label.error").remove();
+        $('.pop_up').find('.error').removeClass('error');
     });
     
     //validate
@@ -46,14 +46,10 @@ $(document).ready(function(){
             mail:'введите email',
             message:'ваш вопрос',
             captcha:'код капчи'
-        }
+        },
         
     });
     
-//    (function err_left(){
-//        $('.form_float_block').find('.error').addClass('error_left');
-//        console.log(1);
-//    });
     
     function reset_validate(){
         $('.pop_up').find("label.error").remove();
