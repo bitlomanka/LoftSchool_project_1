@@ -7,7 +7,7 @@
   "devDependencies": {
     "autoprefixer": "latest",
     "browser-sync": "latest",
-    "cssnano": "latewst",
+    "cssnano": "latest",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-concat-css": "latest",

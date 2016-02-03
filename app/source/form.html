@@ -75,34 +75,36 @@
                         <div class="title_content">
                             У вас интересный проект? Напишите мне
                         </div>
-                        <div class="container_info">
+                        <div class="container_info clearfix">
                             <form action="https://echo.bitlomanka.top" method="post" class="form_of_communication margin">
-                                <div class="input_container">
-                                    <div class="form_float_block float_mob_none">
-                                        <label for="user_field_id" class="label">Имя</label>
+                                <div class="form_float_block float_mob_none clearfix">
+                                    <label for="user_field_id" class="label">Имя</label>
+                                    <div class="input_container">
                                         <input id="user_field_id" type="text" name="username" placeholder="Как к Вам обращаться" value="" class="type_text">
                                     </div>
-                                    <div class="form_float_block float_mob_none">
-                                        <label for="mail_id" class="label">Email</label>
+                                </div>
+                                <div class="form_float_block float_mob_none clearfix">
+                                    <label for="mail_id" class="label">Email</label>
+                                    <div class="input_container error_right">
                                         <input id="mail_id" type="text" name="mail" placeholder="Куда мне писать" value="" class="type_text">
                                     </div>
                                 </div>
+                                <label for="message" class="label">Сообщение</label>
                                 <div class="input_container">
-                                    <label for="message" class="label">Сообщение</label>
                                     <textarea name="message" id="message" class="message" placeholder="Кратко в чем суть"></textarea>
                                 </div>
-                                <div class="input_container">
-                                    <label for="captcha" class="label">Введите код, указанный на картинке</label>
-                                    <div class="form_float_block m_n">
-                                        <div class="captcha_block_img">
-                                            <img src="images/cpt.png" alt="" class="captcha_img">
-                                        </div> 
-                                        <input type="submit" value="Отправить" class="submit button_form">
-                                    </div>
-                                    <div class="form_float_block">
+                                <label for="captcha" class="label">Введите код, указанный на картинке</label>
+                                <div class="form_float_block m_n">
+                                    <div class="captcha_block_img">
+                                        <img src="images/cpt.png" alt="" class="captcha_img">
+                                    </div> 
+                                    <input type="submit" value="Отправить" class="submit button_form">
+                                </div>
+                                <div class="form_float_block">
+                                   <div class="input_container">
                                         <input id="captcha" type="text" name="captcha" placeholder="Введите код" value="" class="captcha type_text">
-                                        <input type="reset" value="Очистить" class="clean button_form">
                                     </div>
+                                    <input type="reset" value="Очистить" class="clean button_form">
                                 </div>
                             </form>
                         </div>
@@ -158,7 +160,7 @@
                                     mail
                                 </span> <span class="cont_t">victoria.kr.1990@gmail.com</span>
                             </a>
-                            </li>
+                        </li>
                         <li class="menu_item">
                             <a href="tel:+380675199702" class="list_item contact_item_link">
                                <span class="contact_icon_2 contact_icons">
@@ -215,6 +217,7 @@
     <!-- build:js js/main.js -->
     <script src="bower/jquery/dist/jquery.min.js"></script> 
     <script src="bower/jquery-placeholder/jquery.placeholder.js"></script> 
+    <script src="js/libs/jquery.validate.js"></script>
     <script src="js/main.js"></script>
     <!-- endbuild -->
 </body>
