@@ -9,21 +9,30 @@ $(document).ready(function(){
 
     // popup
     
-    $('.new_project').on('click', function(){
+    $('.new_project').on('click', function(){        
         $('.pop_up').bPopup({
             speed:500,
             opacity:0.3,
             positionStyle: 'fixed',
-            transition: 'slideDown'
+            transition: 'slideDown',
+            onClose:function(){                
+                $('.pop_up').find("label.error").remove();
+                $('.pop_up').find('.error').removeClass('error');
+            }
         })
-        return false;
     });
     
     
-    $('.b-close').bind('click', function(){
-        $('.pop_up').find("label.error").remove();
-        $('.pop_up').find('.error').removeClass('error');
+    $('.clean').on('click', function(){ 
+        $('.form_of_communication ').find("label.error").remove();
+        $('.form_of_communication ').find('.error').removeClass('error');
+        
     });
+
+    
+    (function(){
+        $('.upload').parent('.fileform').addClass('error')
+    })
     
     //validate
     
@@ -34,7 +43,11 @@ $(document).ready(function(){
             url_project_form:'required',
             message_project:'required',
             username:'required',
-            mail:'required',
+            mail:{
+                required:true,
+                minlength:5,
+                email:true
+            },
             message:'required',
             captcha:'required'
         },messages:{
@@ -46,17 +59,9 @@ $(document).ready(function(){
             mail:'введите email',
             message:'ваш вопрос',
             captcha:'код капчи'
-        },
+        }
         
     });
-    
-    
-    function reset_validate(){
-        $('.pop_up').find("label.error").remove();
-        $('.pop_up').find('.error').removeClass('error');
-        
-    };
-    
     
     
     
