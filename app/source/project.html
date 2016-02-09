@@ -15,7 +15,7 @@
     <!-- endbuild -->
     <!-- build:js js/modernizr.js -->
     <script src="js/libs/modernizr.js"></script>
-    <!-- endbuild --> 
+    <!-- endbuild -->    
 </head>
 <body>
     <div class="wrapper">
@@ -254,13 +254,14 @@
                 <input id="name_project_form" type="text" name="name_project_form" placeholder="Введите название" value="" class="type_text">
             </div>
             <label for="image_project_form" class="label">Картинка проекта</label>
-            <div class="fileform clearfix">
-               <div id="fileformlabel">Загрузите изображение</div>
-                <div class="selectbutton"></div>
-                <div class="input_container clearfix">
-                    <input id="image_project_form" type="file" name="image_project_form" placeholder="Добавьте ссылку" value="" class="upload" onchange="getName(this.value);">
+            <div class="input_container clearfix">
+                <div class="fileform clearfix">
+                    <div class="fileformlabel">Загрузите изображение</div>
+                    <div class="selectbutton"></div>
+                    <input id="image_project_form" type="file" name="image_project_form" value="" class="upload">
+                    <span class="file_input_border"></span>
                 </div>
-            </div>
+            </div>                
             <label for="url_project" class="label">URL проекта</label>
             <div class="input_container">
                 <input id="url_project" type="text" name="url_project_form" placeholder="Добавьте ссылку" value="" class="type_text">
@@ -285,9 +286,15 @@
     <!-- build:js js/main.js -->
     <script src="bower/jquery/dist/jquery.min.js"></script> 
     <script src="bower/jquery-placeholder/jquery.placeholder.js"></script> 
-    <script src="js/libs/bpopup.js"></script>
-    <script src="js/libs/jquery.validate.js"></script>
+    <script src="bower/bPopup/jquery.bpopup.js"></script>
+    <script src="bower/jquery-validation/dist/jquery.validate.js"></script>   
     <script src="js/main.js"></script>
     <!-- endbuild -->
 </body>
 </html>
+
+
+
+
+
+

@@ -248,13 +248,14 @@
                 <input id="name_project_form" type="text" name="name_project_form" placeholder="Введите название" value="" class="type_text">
             </div>
             <label for="image_project_form" class="label">Картинка проекта</label>
-            <div class="fileform clearfix">
-               <div id="fileformlabel">Загрузите изображение</div>
-                <div class="selectbutton"></div>
-                <div class="input_container clearfix">
-                    <input id="image_project_form" type="file" name="image_project_form" placeholder="Добавьте ссылку" value="" class="upload" onchange="getName(this.value);">
+            <div class="input_container clearfix">
+                <div class="fileform clearfix">
+                    <div class="fileformlabel">Загрузите изображение</div>
+                    <div class="selectbutton"></div>
+                    <input id="image_project_form" type="file" name="image_project_form" value="" class="upload">
+                    <span class="file_input_border"></span>
                 </div>
-            </div>
+            </div>                
             <label for="url_project" class="label">URL проекта</label>
             <div class="input_container">
                 <input id="url_project" type="text" name="url_project_form" placeholder="Добавьте ссылку" value="" class="type_text">
@@ -279,3 +280,9 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+

@@ -489,13 +489,6 @@ html,body,
 }
 
 
-.wrapp_avatar, .icons, .content_section,
-.list, .block_project, input, .message,
-.captcha_block_img, .skils,
-.add_project:before{
-   behavior: url(../oldbrowsers/PIE.htc); 
-}
-
 .icons_1{
     background-image: url(../images/info_sprt.png);
     background-position: 18px -56px
@@ -759,8 +752,13 @@ input{
 }
 
 
-.input_container{
+.input_container{    
+    margin: 0 0 15px;
     position: relative;
+}
+
+.input_container input, .input_container textarea, .input_container .fileformlabel {
+    color: #c7c6c6;
 }
 
 .form_float_block{
@@ -775,8 +773,7 @@ input{
     margin-left: 0;
 }
 
-.type_text, .message{
-    margin: 0 0 15px;
+.type_text, .message{    
     font: 300 12px 'open_sanslight';
     background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
 }
@@ -795,8 +792,7 @@ input{
 .message{
     width: 88%;
     height: 161px;
-    padding: 10px 4%;
-    margin-bottom: 12px;
+    padding: 10px 4%;    
     resize: none;
 }
 
@@ -966,6 +962,10 @@ input{
     border-top: 1px solid #b6b6b6;
     border-left: 1px solid #b6b6b6;
     border-right: 1px solid #b6b6b6;
+}
+
+.no-cssgradients label.error{    
+    background: rgb(243,162,135);
 }
 
 /*----------------------------------media---------------------------------------*/
@@ -1193,62 +1193,62 @@ input{
     position: relative;
 }
 
-.input_container ~ .upload {
+.fileform{    
     cursor: pointer;
-}
-
-.fileform{
-    border: 1px solid #b6b6b6;
-    cursor: pointer;
+    overflow: hidden;
     position: relative;
-    border-radius: 4px;
-    margin: 0 0 15px;
+    border-radius: 4px;    
     background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
     box-shadow: 0 1px 2px -1px rgba(102, 102, 102, 0.4);
     font: 300 12px 'open_sanslight';
     color: #c7c6c6;
 }
 
-.fileform .selectbutton {
+.file_input_border {
+    border: 1px solid #b6b6b6;
+    border-radius: 3px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;    
+}
+
+.selectbutton {
     border-left: 1px solid #b6b6b6;
-    float: right;
-    height: 30px;
-    line-height: 20px;
+    float: right;    
     overflow: hidden;
-    padding: 2px 6px;
+    height: 16px;
+    padding: 10px 6px;
     text-align: center;
     vertical-align: middle;
     width: 50px;
     background: url(../images/ic.png) no-repeat center;
-
 }
 
-.upload{
-   position:absolute;
+.upload {
+    cursor: pointer;
+    position:absolute;
     top:0;
-    left:0;
-    -moz-opacity: 0;
+    right:0;    
     filter: alpha(opacity=0);
-    opacity: 0;
-    height: 30px;
+    opacity: 0;    
     z-index:20;
     padding: 0;
-    font-size: 17px;
+    font-size: 200px;
 }
 
-.fileform #fileformlabel {
-background-color: #FFFFFF;
-float: left;
-height: 22px;
-line-height: 22px;
-overflow: hidden;
-padding: 2px 4%;
-text-align: left;
-vertical-align: middle;
-width:72%;
-background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
+.fileform .fileformlabel {
+    background-color: #FFFFFF;
+    float: left;    
+    overflow: hidden;
+    height: 16px;
+    padding: 10px 4%;
+    text-align: left;
+    vertical-align: middle;
+    width:72%;
+    background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
 }
-
 
 .pop_up .submit{
     width:40%;
@@ -1258,7 +1258,7 @@ background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
     position: relative;
 }
 
-input.error, .message.error{
+input.error, .message.error, input.error ~ .file_input_border{
     border: 2px solid #dfac98;
 }
 
@@ -1315,8 +1315,9 @@ label.error:after{
 }
 
 
-
-
+button{
+    border: none;
+}
 
 
 
