@@ -8,8 +8,9 @@ body{
     word-wrap: break-word;
 }
 
-input,textarea {
-    outline:none;
+input:focus ,textarea:focus {
+    outline: 0;
+    border:1px solid #45B297;
 }
 
 ul, h2{
@@ -60,7 +61,6 @@ html,body,
 .container{
     max-width: 960px;
     margin: 0 auto 36px auto;
-    overflow: hidden;
 }
 
 .logo_block{
@@ -757,8 +757,8 @@ input{
     position: relative;
 }
 
-.input_container input, .input_container textarea, .input_container .fileformlabel {
-    color: #c7c6c6;
+input, .color_fileformlabel, textarea {
+    color: #000;
 }
 
 .form_float_block{
@@ -968,6 +968,165 @@ input{
     background: rgb(243,162,135);
 }
 
+
+.pop_up{
+    width:100%;
+    max-width: 322px;
+    margin: 0 auto;
+    border: 1px solid #b6b6b6;;
+    background: #f5f4f3;
+    border-radius: 4px;
+    box-shadow: 5px 10px 27px 0.00px rgba(159, 159, 159, 0.75);
+    padding: 24px 20px;
+    position: relative;
+    display: none;
+}
+
+
+.b-close{
+    width: 14px;
+    height: 13px;
+    background: url(../images/x.png) no-repeat;
+    position: absolute;
+    right: 7px;
+    top: 6px;
+    cursor: pointer;
+}
+
+
+.mess_proj{
+    width: 100%;
+    height: 110px;
+    position: relative;
+}
+
+.fileform{    
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;    
+    background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
+    box-shadow: 0 1px 2px -1px rgba(102, 102, 102, 0.4);
+    font: 300 12px 'open_sanslight';
+    color: #c7c6c6;
+}
+
+.file_input_border {
+    border: 1px solid #b6b6b6;
+    border-radius: 3px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;    
+}
+
+.selectbutton {
+    border-left: 1px solid #b6b6b6;
+    float: right;    
+    overflow: hidden;
+    height: 16px;
+    padding: 10px 6px;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    background: url(../images/ic.png) no-repeat center;
+}
+
+.upload {
+    cursor: pointer;
+    position:absolute;
+    top:0;
+    right:0;    
+    filter: alpha(opacity=0);
+    opacity: 0;    
+    z-index:20;
+    padding: 0;
+    font-size: 200px;
+}
+
+.fileform .fileformlabel {
+    background-color: #FFFFFF;
+    float: left;    
+    overflow: hidden;
+    height: 16px;
+    padding: 10px 4%;
+    text-align: left;
+    vertical-align: middle;
+    width:72%;
+    background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
+}
+
+.pop_up .submit{
+    width:40%;
+}
+
+.project_form_block{
+    position: relative;
+}
+
+input.error, .message.error, input.error ~ .file_input_border{
+    border: 2px solid #dfac98;
+}
+
+
+label.error{
+    position: absolute;
+    text-align: right;
+    white-space: nowrap;
+    font: 600 12px 'open_sanssemibold';
+    color: #9a4e32;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
+    background-image: linear-gradient( 0deg, rgb(211,118,84) 0%, rgb(243,162,135) 90%);
+    box-shadow: 0px 2px 1px 0.00px rgba(9, 9, 9, 0.17);
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #f19a7c;
+    margin:-15px 10px 0 0;
+    top: 50%;
+    right: 100%;
+}
+
+
+label.error:after{
+    content: '';
+    border-left: 7px solid #e49072;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    position: absolute;
+    margin-top: -7px;
+    top: 50%;
+    right: -7px;
+}
+
+.error_right label.error{
+    right: auto;
+    left: 100%;
+    margin-left: 11px;
+}
+
+.error_right label.error:before{
+    content: '';
+    border-right: 7px solid #e49072;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    left: -7px;
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    margin-top: -7px;
+}
+
+.error_right label.error:after{
+    border:none;
+}
+
+
+button{
+    border: none;
+}
+
+
 /*----------------------------------media---------------------------------------*/
 
 @media screen and (max-width:960px){
@@ -1159,168 +1318,36 @@ input{
     .form_of_communication{
         width: 80%;
     }
+    
+    .error_right label.error {
+        left: 40%;
+        right: auto;
+        top:-20px;
+        margin-left: 0;
+    }
+    
+    label.error {
+        left: 40%;
+        top:-20px;
+        right: auto;
+    }
+    
+    .error_right label.error:before{
+        transform: rotate(-90deg);
+        left: 11px;
+        top: 32px;
+        
+    }
+    
+    label.error:after{
+        top: auto;
+        right: auto;
+        transform: rotate(-270deg);
+        left: 11px;
+        bottom: -10px;
+    }
 
 }
-
-.pop_up{
-    width:100%;
-    max-width: 322px;
-    margin: 0 auto;
-    border: 1px solid #b6b6b6;;
-    background: #f5f4f3;
-    border-radius: 4px;
-    box-shadow: 5px 10px 27px 0.00px rgba(159, 159, 159, 0.75);
-    padding: 24px 20px;
-    position: relative;
-    display: none;
-}
-
-
-.b-close{
-    width: 14px;
-    height: 13px;
-    background: url(../images/x.png) no-repeat;
-    position: absolute;
-    right: 7px;
-    top: 6px;
-    cursor: pointer;
-}
-
-
-.mess_proj{
-    width: 100%;
-    height: 110px;
-    position: relative;
-}
-
-.fileform{    
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    border-radius: 4px;    
-    background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
-    box-shadow: 0 1px 2px -1px rgba(102, 102, 102, 0.4);
-    font: 300 12px 'open_sanslight';
-    color: #c7c6c6;
-}
-
-.file_input_border {
-    border: 1px solid #b6b6b6;
-    border-radius: 3px;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;    
-}
-
-.selectbutton {
-    border-left: 1px solid #b6b6b6;
-    float: right;    
-    overflow: hidden;
-    height: 16px;
-    padding: 10px 6px;
-    text-align: center;
-    vertical-align: middle;
-    width: 50px;
-    background: url(../images/ic.png) no-repeat center;
-}
-
-.upload {
-    cursor: pointer;
-    position:absolute;
-    top:0;
-    right:0;    
-    filter: alpha(opacity=0);
-    opacity: 0;    
-    z-index:20;
-    padding: 0;
-    font-size: 200px;
-}
-
-.fileform .fileformlabel {
-    background-color: #FFFFFF;
-    float: left;    
-    overflow: hidden;
-    height: 16px;
-    padding: 10px 4%;
-    text-align: left;
-    vertical-align: middle;
-    width:72%;
-    background: linear-gradient(0deg, #e9e7e7 0%, rgba(251, 249, 249, 0) 100%);
-}
-
-.pop_up .submit{
-    width:40%;
-}
-
-.project_form_block{
-    position: relative;
-}
-
-input.error, .message.error, input.error ~ .file_input_border{
-    border: 2px solid #dfac98;
-}
-
-
-label.error{
-    position: absolute;
-    text-align: right;
-    white-space: nowrap;
-    font: 600 12px 'open_sanssemibold';
-    color: #9a4e32;
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
-    background-image: linear-gradient( 0deg, rgb(211,118,84) 0%, rgb(243,162,135) 90%);
-    box-shadow: 0px 2px 1px 0.00px rgba(9, 9, 9, 0.17);
-    padding: 6px 8px;
-    border-radius: 4px;
-    border: 1px solid #f19a7c;
-    margin:-15px 10px 0 0;
-    top: 50%;
-    right: 100%;
-}
-
-
-label.error:after{
-    content: '';
-    border-left: 7px solid #e49072;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    position: absolute;
-    margin-top: -7px;
-    top: 50%;
-    right: -7px;
-}
-
-.error_right label.error{
-    right: auto;
-    left: 100%;
-    margin-left: 11px;
-}
-
-.error_right label.error:before{
-    content: '';
-    border-right: 7px solid #e49072;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    left: -7px;
-    position: absolute;
-    top: 50%;
-    left: -7px;
-    margin-top: -7px;
-}
-
-.error_right label.error:after{
-    border:none;
-}
-
-
-button{
-    border: none;
-}
-
-
-
 
 
 

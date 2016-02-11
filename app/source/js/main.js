@@ -9,15 +9,30 @@ $(document).ready(function(){
 
     // popup
     
+        // image_project_form
+    function val_img(){
+        if ($(this).val()) {
+            $(this).siblings('.fileformlabel').text($(this).val()).addClass('color_fileformlabel');    
+        } else {
+            $(this).siblings('.fileformlabel').text('Загрузите изображение').removeClass('color_fileformlabel');  
+        }
+        
+        
+    };
+
+    $('.fileform .upload').on('change', val_img);
+    
     $('.new_project').on('click', function(){        
         $('.pop_up').bPopup({
             speed:500,
             opacity:0.3,
             positionStyle: 'absolute',
             transition: 'slideDown',
-            onClose:function(){                
+            onClose:function(){    
                 $('.pop_up').find("label.error").remove();
                 $('.pop_up').find('.error').removeClass('error');
+                $('.pop_up')[0].reset();
+                $('.fileform .upload').each(val_img);
             }
         })
     });
@@ -40,35 +55,34 @@ $(document).ready(function(){
             username:'required',
             mail:{
                 required:true,
-                minlength:5,
-                email:true
+                email: true
             },
             message:'required',
             captcha:'required'
         },messages:{
             name_project_form:'введите название',
             image_project_form:'изображение',
-            url_project_form:'ссылка на проект',
+            url_project_form:{
+                            required:'ссылка на проект',
+                            url: 'Введите корректный адрес'
+            },
             message_project:'описание проекта',
             username:'введите имя',
-            mail:'введите email',
+            mail:{
+                required:'введите email',
+                email: 'Введите корректный e-mail'
+            },
             message:'ваш вопрос',
-            captcha:'код капчи'
+            captcha:{
+                required:'код капчи',
+                captcha: 'Введите правильный код'
+            }
         },
         errorPlacement: function(error, element) {
-            error.appendTo( element.closest(".input_container") );
+            error.appendTo( element.closest('.input_container') );
         }        
     });
     
-    // image_project_form
-
-    $('.fileform .upload').on('change', function() {    
-        if ($(this).val()) {
-            $(this).siblings('.fileformlabel').text($(this).val());    
-        } else {
-            $(this).siblings('.fileformlabel').text('Загрузите изображение');    
-        }
-    });
     
     //ie placeholder
     
