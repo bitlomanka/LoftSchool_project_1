@@ -15,8 +15,7 @@ $(document).ready(function(){
             $(this).siblings('.fileformlabel').text($(this).val()).addClass('color_fileformlabel');    
         } else {
             $(this).siblings('.fileformlabel').text('Загрузите изображение').removeClass('color_fileformlabel');  
-        }
-        
+        }  
         
     };
 
@@ -63,8 +62,8 @@ $(document).ready(function(){
             name_project_form:'введите название',
             image_project_form:'изображение',
             url_project_form:{
-                            required:'ссылка на проект',
-                            url: 'Введите корректный адрес'
+                required:'ссылка на проект',
+                url: 'Введите корректный адрес'
             },
             message_project:'описание проекта',
             username:'введите имя',
